@@ -14,3 +14,7 @@ vehicles_df['price_range'] = pd.cut(vehicles_df['price'], bins=bins, labels=labe
 
 st.header('Data Viewer')
 st.dataframe(vehicles_df)
+
+st.header('Number of Vehicles by Price and Type')
+fig1 = px.histogram(vehicles_df, x='type', color='price_range')
+st.write(fig1)
